@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quote of the Day</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        
+        <style>
+            .mainContainer {
+                margin: 0;
+                min-height: 100vh;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        </style>
+    </head>
+    <body  >
+        <div id="createImage" class="flex justify-center items-center mainContainer" > 
+            <div class=" rounded-xl  
+                            text-white
+                            p-3
+                            text-left
+                            bg-gray-600
+                            opacity-[0.8]
+                            w-max-[90vw]
+                            "
+                >
+                <img src="quote_icon.png"  alt="quote icon">
+                <h2 class="text-xl my-2" id="Quote" ></h2>
+                <h2 class="text-xl my-2" id="QuoteAuthor"></h2>
+
+                <div class="flex justify-start flex-wrap my-2" >
+                    <button class="px-2 py-1 bg-gray-900  my-2 hover:bg-gray-800 rounded-lg mx-2 flex items-center" onclick="getQuote()" > 
+                        <img  height="24px" width="24px" class="mr-1"  src="regenerate.png" alt="">New Quote
+                    </button>
+                    <button class="px-2 py-1 bg-gray-900 my-2 hover:bg-gray-800 rounded-lg mx-2 flex items-center" onclick="copyClipboard()" >
+                        <img height="24px" width="24px" class="mr-1"  src="copy.png" alt="">
+                        Copy</button>
+                    <button class="px-2 py-1 bg-gray-900 my-2 hover:bg-gray-800 rounded-lg mx-2 flex items-center" onclick="shareOnTwitter()" > 
+                        <img height="24px" width="24px"  class="mr-1" src="twitter.png" alt=""> 
+                        Share</button>
+                        <!-- <button class=" px-2 py-1 rounded-lg my-2 hover:bg-gray-800 mx-2 bg-gray-900 flex items-center" onclick="generateQuoteImage()" > 
+                            <img height="24px" width="24px"  class="mr-1" src="import.png" alt=""> 
+                            Export</button> -->
+                        </div>
+                    </div> 
+                </div>
+    <script src="script.js"></script>
+    </body>
+</html>
+
