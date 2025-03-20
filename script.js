@@ -1,6 +1,8 @@
 
 const Quote=document.getElementById('Quote');
 const QuoteAuthor=document.getElementById('QuoteAuthor');
+
+// using array of imageslinks for displaying randomly for each quote
 let images=[
     "https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg",
     "https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg",
@@ -19,9 +21,13 @@ let images=[
     "https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg"
 ]
 
+// loading quote on page load
 window.onload = () => {
     generateImage();
+    getQuote()
 };
+
+// fetch api for getting quote 
 async function getQuote(){
     generateImage()
     const url='https://api.freeapi.app/api/v1/public/quotes/quote/random';
@@ -45,7 +51,6 @@ function copyClipboard(){
 }
 
 
-getQuote()
 
 function generateImage(){
     const ele=document.getElementById('createImage');
