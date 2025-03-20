@@ -29,7 +29,7 @@ window.onload = () => {
 
 // fetch api for getting quote 
 async function getQuote(){
-    generateImage()
+    generateImage();
     const url='https://api.freeapi.app/api/v1/public/quotes/quote/random';
     const options={method:'GET',headers:{accept:'application/json'}}
     try {
@@ -45,6 +45,7 @@ async function getQuote(){
 
 function copyClipboard(){
     const copyText=`${Quote.innerText} \n ${QuoteAuthor.innerText}`;
+    // using navigator/clipboard api
     navigator.clipboard.writeText(copyText)
     .then(()=>{alert(copyText)})
     .catch(()=>{alert("Failed to copy")})
@@ -54,6 +55,7 @@ function copyClipboard(){
 
 function generateImage(){
     const ele=document.getElementById('createImage');
+    // generating random number from 0-14 to get image from array of images
     ele.style.backgroundImage = `url('${images[Math.floor(Math.random() * 15)]}')`;
     console.log(images[Math.floor(Math.random() * 15)]);
     
@@ -62,7 +64,6 @@ function generateImage(){
 function shareOnTwitter() {
     const message=`${Quote.innerText} \n${QuoteAuthor.innerText} \n`;
     const hashtags = `${QuoteAuthor.innerText}`;
-
     const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}&hashtags=${hashtags}`;
     window.open(twitterShareUrl, '_blank');
 }
